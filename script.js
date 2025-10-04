@@ -21,18 +21,6 @@ if(themeBtn){
 const y = document.getElementById('year');
 if(y) y.textContent = new Date().getFullYear();
 
-// ===== Skills bar animation on scroll =====
-const skills = document.querySelectorAll('.bar div');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.style.width = entry.target.style.getPropertyValue('--width');
-      observer.unobserve(entry.target);
-    }
-  });
-}, {threshold:0.5});
-skills.forEach(bar=>observer.observe(bar));
-
 // ===== Scroll to top button =====
 const scrollBtn = document.getElementById('scrollTopBtn');
 window.addEventListener('scroll', () => {
